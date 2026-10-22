@@ -1,0 +1,11 @@
+# ACRONYM: Paper title
+
+> One-paragraph summary for language models: what the paper does, the main result, the venue.
+
+- [Project page](https://malga-vision.github.io/malga-academic-page-template/)
+- [Code](https://github.com/Malga-Vision)
+
+## Key facts
+
+- Venue: VENUE YEAR
+- Authors: First Author, Second Author (MaLGa-DIBRIS, University of Genoa)

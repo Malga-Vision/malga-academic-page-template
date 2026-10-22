@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Keep the CSP right after charset. tools/page_guard.py fails if it is missing or weakened. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; media-src 'self'; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--
+    REPLACE everything marked ACRONYM / Paper title / VENUE / REPO below.
+    PAGE_URL = https://malga-vision.github.io/<this-repo>/
+  -->
+  <title>ACRONYM: Paper title (VENUE YEAR)</title>
+  <meta name="description" content="One or two sentences: what the method does and the main result. VENUE YEAR.">
+  <meta name="keywords" content="ACRONYM, topic, topic, VENUE YEAR">
+  <meta name="author" content="First Author, Second Author, Last Author">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <!-- Google Search Console (MaLGa-Vision property code; keep it) -->
+  <meta name="google-site-verification" content="vQwwpIz9eQydXOOjXSr4RgmKe9jPycMfCkP4ZTIk1Ss">
+  <link rel="canonical" href="https://malga-vision.github.io/malga-academic-page-template/">
+
+  <!-- Open Graph / social preview: og:image must be a JPG or PNG (about 1200x630), not SVG -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ACRONYM (VENUE YEAR)">
+  <meta property="og:title" content="ACRONYM: Paper title">
+  <meta property="og:description" content="One sentence for link previews.">
+  <meta property="og:url" content="https://malga-vision.github.io/malga-academic-page-template/">
+  <meta property="og:image" content="https://malga-vision.github.io/malga-academic-page-template/static/images/teaser.jpg">
+  <meta property="og:image:alt" content="What the teaser figure shows">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ACRONYM: Paper title (VENUE YEAR)">
+  <meta name="twitter:description" content="One sentence for link previews.">
+  <meta name="twitter:image" content="https://malga-vision.github.io/malga-academic-page-template/static/images/teaser.jpg">
+
+  <!-- Google Scholar. Add citation_pdf_url, citation_doi, citation_firstpage/lastpage when known. -->
+  <meta name="citation_title" content="ACRONYM: Paper title">
+  <meta name="citation_author" content="Author, First">
+  <meta name="citation_author" content="Author, Second">
+  <meta name="citation_conference_title" content="Full proceedings title">
+  <meta name="citation_publication_date" content="YEAR">
+
+  <!-- Structured data. Keep the FAQ answers identical to the visible FAQ section. -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://malga-vision.github.io/malga-academic-page-template/#article",
+      "headline": "ACRONYM: Paper title",
+      "abstract": "Paste the abstract verbatim.",
+      "author": [
+        { "@type": "Person", "name": "First Author", "affiliation": { "@id": "https://malga-vision.github.io/malga-academic-page-template/#unige" } }
+      ],
+      "datePublished": "YEAR",
+      "inLanguage": "en",
+      "image": "https://malga-vision.github.io/malga-academic-page-template/static/images/teaser.jpg",
+      "url": "https://malga-vision.github.io/malga-academic-page-template/"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://malga-vision.github.io/malga-academic-page-template/#unige",
+      "name": "MaLGa-DIBRIS, University of Genoa",
+      "url": "https://malga.unige.it/"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://malga-vision.github.io/malga-academic-page-template/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is ACRONYM?", "acceptedAnswer": { "@type": "Answer", "text": "Same text as the visible answer." } }
+      ]
+    }
+  ]
+}
+  </script>
+
+  <link rel="icon" type="image/svg+xml" href="static/malga/img/malga-mark.svg">
+  <link rel="stylesheet" href="static/malga/malga.css">
+  <!-- Page-only styles, if ever needed: <link rel="stylesheet" href="static/css/page.css"> -->
+  <script src="static/malga/malga.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-header__logo" href="https://malga.unige.it/" target="_blank" rel="noopener noreferrer">
+        <img src="static/malga/img/malga-logo.svg" width="231" height="71" alt="MaLGa, Machine Learning Genoa Center">
+      </a>
+      <!-- One link per section present on the page -->
+      <nav class="site-nav" aria-label="Sections">
+        <a href="#abstract">Abstract</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#media">Media</a>
+        <a href="#faq">FAQ</a>
+        <a href="#cite">Cite</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <p class="hero__venue"><em>VENUE YEAR</em> City, Country, Month Day&ndash;Day, YEAR</p>
+        <!-- "ACRONYM: subtitle" titles use both spans; other titles use only hero__title -->
+        <h1>
+          <span class="hero__acronym">ACRONYM</span>
+          <span class="hero__title">Paper title, as in the proceedings</span>
+        </h1>
+        <p class="authors">
+          <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">First Author</a><sup>1</sup>,
+          <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Second Author</a><sup>1,2</sup>,
+          <span>Last Author</span><sup>1</sup>
+        </p>
+        <p class="affiliations">
+          <span><sup>1</sup>MaLGa-DIBRIS, University of Genoa, Italy</span>
+          <span><sup>2</sup>Other institution, Country</span>
+        </p>
+        <!-- Optional: <p class="author-note">* Equal contribution</p> -->
+        <!-- Paper is the primary button once it exists; before that, Code is. Unavailable items stay as disabled spans. -->
+        <ul class="links">
+          <!-- <li><a class="button button--primary" href="static/pdfs/paper.pdf"><svg class="icon" aria-hidden="true"><use href="static/malga/img/icons.svg#i-paper"/></svg>Paper</a></li> -->
+          <li><span class="button" aria-disabled="true"><svg class="icon" aria-hidden="true"><use href="static/malga/img/icons.svg#i-paper"/></svg>Paper <small>soon</small></span></li>
+          <li><span class="button" aria-disabled="true"><svg class="icon" aria-hidden="true"><use href="static/malga/img/icons.svg#i-preprint"/></svg>arXiv <small>soon</small></span></li>
+          <li><a class="button button--primary" href="https://github.com/Malga-Vision" target="_blank" rel="noopener noreferrer"><svg class="icon icon--fill" aria-hidden="true"><use href="static/malga/img/icons.svg#i-github"/></svg>Code</a></li>
+          <li><a class="button" href="#media"><svg class="icon" aria-hidden="true"><use href="static/malga/img/icons.svg#i-poster"/></svg>Poster &amp; video</a></li>
+          <li><a class="button" href="#cite"><svg class="icon" aria-hidden="true"><use href="static/malga/img/icons.svg#i-cite"/></svg>BibTeX</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="teaser" aria-label="Teaser">
+      <div class="wrap">
+        <figure class="figure">
+          <div class="figure__frame">
+            <img src="static/images/teaser.svg" width="1600" height="900" alt="Describe what the teaser figure shows">
+          </div>
+          <figcaption><strong>Figure 1.</strong> Caption copied from the paper.</figcaption>
+        </figure>
+        <p class="tldr"><strong>TL;DR.</strong> One sentence a busy reader can take away.</p>
+      </div>
+    </section>
+
+    <section class="section" id="abstract">
+      <div class="wrap">
+        <h2 class="section__title">Abstract</h2>
+        <div class="prose abstract">
+          <p>Paste the abstract verbatim from the camera-ready paper.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sections after the abstract alternate: section--alt, plain, section--alt, ... -->
+    <section class="section section--alt" id="method">
+      <div class="wrap">
+        <h2 class="section__title">Method</h2>
+        <figure class="figure">
+          <div class="figure__frame">
+            <img src="static/images/method.svg" width="1600" height="600" loading="lazy" alt="Describe the method figure">
+          </div>
+          <figcaption><strong>Figure 2. Overview.</strong> Caption copied from the paper.</figcaption>
+        </figure>
+        <div class="prose">
+          <p>Method description in the paper's words.</p>
+          <h3>A component</h3>
+          <p>Equations go in a <code>p.eq</code> block, written with HTML entities:</p>
+          <p class="eq"><i>L</i> = <i>L</i><sub>task</sub> + &lambda; <i>L</i><sub>aux</sub></p>
+        </div>
+        <ul class="highlights">
+          <li><h3>Contribution one</h3><p>Short description.</p></li>
+          <li><h3>Contribution two</h3><p>Short description.</p></li>
+          <li><h3>Contribution three</h3><p>Short description.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="wrap">
+        <h2 class="section__title">Experimental results</h2>
+        <div class="prose">
+          <p>Datasets, protocol, and how to read the table. <b>Bold</b> is best, <u>underlined</u> second.</p>
+        </div>
+        <div class="table-block">
+          <p class="table-caption"><strong>Table 1.</strong> Caption copied from the paper.</p>
+          <div class="table-scroll">
+            <table class="data-table">
+              <thead>
+                <tr><th class="left" scope="col">Method</th><th scope="col">Metric A&darr;</th><th scope="col">Metric B&uarr;</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="rowgroup" colspan="3">Dataset one</th></tr>
+                <tr><th scope="row">Baseline</th><td class="second">2.00</td><td>80.0</td></tr>
+                <tr class="ours"><th scope="row">ACRONYM (ours)</th><td class="best">1.50</td><td class="best">85.0</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <ul class="stats">
+          <li><strong>&minus;25%</strong><span>error on dataset one</span></li>
+          <li><strong>6&times;</strong><span>faster than the baselines</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="media">
+      <div class="wrap">
+        <h2 class="section__title">Video and poster</h2>
+        <div class="media-grid">
+          <div class="media-card" id="video">
+            <h3>Video</h3>
+            <!-- <video controls playsinline preload="metadata" poster="static/images/video_poster.jpg"><source src="static/videos/video.mp4" type="video/mp4"></video>
+                 Keep videos under 25 MB: H.264 720p, CRF 28, -movflags +faststart. -->
+            <div class="placeholder"><span>Coming soon</span></div>
+          </div>
+          <div class="media-card" id="poster">
+            <h3>Poster</h3>
+            <!-- <a class="preview" href="static/pdfs/poster.pdf"><img src="static/images/poster_preview.jpg" width="900" height="1270" loading="lazy" alt="Poster preview"></a>
+                 <p>PDF, opens in the browser.</p> -->
+            <a class="preview" href="#poster"><img src="static/images/poster_preview.svg" width="900" height="1270" loading="lazy" alt="Poster preview placeholder"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap">
+        <h2 class="section__title">Frequently asked questions</h2>
+        <div class="faq">
+          <details>
+            <summary>What is ACRONYM?</summary>
+            <div><p>Same text as the visible answer.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="cite">
+      <div class="wrap">
+        <h2 class="section__title">Citation</h2>
+        <div class="cite">
+          <button class="button cite__copy" type="button" data-copy="bibtex"><svg class="icon" aria-hidden="true"><use href="static/malga/img/icons.svg#i-copy"/></svg><span data-label>Copy</span></button>
+          <pre><code id="bibtex">@inproceedings{author2027acronym,
+  title     = {{ACRONYM}: Paper title},
+  author    = {Author, First and Author, Second},
+  booktitle = {Full proceedings title},
+  year      = {YEAR}
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+<!-- RELATED:START -->
+    <section class="section" id="related">
+      <div class="wrap">
+        <h2 class="section__title">Related work from our lab</h2>
+        <ol class="related">
+          <li>
+            <span class="related__venue">WACV 2027</span>
+            <a class="related__title" href="https://malga-vision.github.io/PACER-wacv27-AcademicPage/">PACER: Curriculum Self-Training with Spatial Uncertainty for Pseudo-Label Selection in Few-Shot Anatomical Landmark Detection</a>
+            <p><a href="https://github.com/Malga-Vision/PACER-wacv27" target="_blank" rel="noopener noreferrer">Code</a></p>
+          </li>
+          <li>
+            <span class="related__venue">MICCAI 2026, oral</span>
+            <a class="related__title" href="https://malga-vision.github.io/CDPM-Align_AcademicPage/">CDPM-Align: Multi-Scale Guidance-Aligned Diffusion Pretraining for Robust Few-Shot Anatomical Landmark Detection</a>
+            <p><a href="https://github.com/Malga-Vision/CDPM-Align" target="_blank" rel="noopener noreferrer">Code</a></p>
+          </li>
+          <li>
+            <span class="related__venue">ISBI 2026</span>
+            <a class="related__title" href="https://malga-vision.github.io/Landmarks-Hip-Conditions-AcademicPage/">Automated Landmark Detection for Assessing Hip Conditions: A Cross-Modality Validation of MRI Versus X-Ray</a>
+            <p><a href="https://github.com/Malga-Vision/Landmarks-Hip-Conditions" target="_blank" rel="noopener noreferrer">Code</a></p>
+          </li>
+          <li>
+            <span class="related__venue">NeurIPS 2025</span>
+            <a class="related__title" href="https://malga-vision.github.io/DiffusingDeBias-AcademicPage/">Diffusing DeBias: Synthetic Bias Amplification for Model Debiasing</a>
+            <p><a href="https://github.com/Malga-Vision/DiffusingDeBias" target="_blank" rel="noopener noreferrer">Code</a></p>
+          </li>
+          <li>
+            <span class="related__venue">ICCV 2025 Workshops</span>
+            <a class="related__title" href="https://malga-vision.github.io/FairerXRay-LandmarkDetection-AcademicPage/">Are X-ray Landmark Detection Models Fair? A Preliminary Assessment and Mitigation Strategy</a>
+          </li>
+          <li>
+            <span class="related__venue">WACV 2025</span>
+            <a class="related__title" href="https://malga-vision.github.io/DiffusionXray-FewShot-LandmarkDetection-AcademicPage/">Self-Supervised Pre-Training with Diffusion Model for Few-Shot Landmark Detection in X-Ray Images</a>
+            <p><a href="https://github.com/Malga-Vision/DiffusionXray-FewShot-LandmarkDetection" target="_blank" rel="noopener noreferrer">Code</a></p>
+          </li>
+          <li>
+            <span class="related__venue">ISBI 2024</span>
+            <a class="related__title" href="https://malga-vision.github.io/InDomain-TransferLearning-LandmarkDetection-AcademicPage/">Is In-Domain Data Beneficial in Transfer Learning for Landmarks Detection in X-Ray Images?</a>
+          </li>
+        </ol>
+      </div>
+    </section>
+<!-- RELATED:END -->
+  </main>
+
+<!-- FOOTER:START -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="site-footer__grid">
+        <div>
+          <a class="site-footer__logo" href="https://malga.unige.it/" target="_blank" rel="noopener noreferrer">
+            <img src="static/malga/img/malga-unige-white.svg" width="236" height="74" alt="MaLGa and University of Genoa">
+          </a>
+          <p>Machine Learning Genoa Center (MaLGa)<br>DIBRIS, University of Genoa, Italy</p>
+        </div>
+        <div>
+          <h2>This paper</h2>
+          <ul>
+            <li><a href="#cite">How to cite</a></li>
+            <li><a href="https://github.com/Malga-Vision/malga-academic-page-template" target="_blank" rel="noopener noreferrer">Source of this page</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>MaLGa</h2>
+          <ul>
+            <li><a href="https://malga.unige.it/" target="_blank" rel="noopener noreferrer">malga.unige.it</a></li>
+            <li><a href="https://github.com/Malga-Vision" target="_blank" rel="noopener noreferrer">Malga-Vision on GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__legal">
+        <span>&copy; The authors. Figures and text are from the paper.</span>
+        <span>Built with the <a href="https://github.com/Malga-Vision/malga-academic-page-template" target="_blank" rel="noopener noreferrer">MaLGa academic page template</a>.</span>
+      </div>
+    </div>
+  </footer>
+<!-- FOOTER:END -->
+</body>
+</html>
